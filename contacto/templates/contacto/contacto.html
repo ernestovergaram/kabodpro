@@ -1,0 +1,21 @@
+{% extends "kabodproApp/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="contenedorformulario">
+    {% if "enviado" in request.GET %}
+        <h4> <strong><p style="color:#EDECAB; text-align: center; "> Información fue enviada correctamente.</p></strong></h4>
+
+    {% endif %}
+
+
+    <form action="" method="POST" style="text-align: center;">
+        {% csrf_token %}
+        <table style="color:white; margin: 20px auto;" >{{miformulario}}</table>
+        <input type="submit" value="Enviar" style="width: 150px;">
+    </form>
+</div>
+
+{% endblock %}
